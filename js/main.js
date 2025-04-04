@@ -40,7 +40,7 @@ const ARTIGOS = [
     id: 2,
     titulo: 'Integração vs Automação de Sistemas: Qual é a Diferença, Afinal?',
     resumo: 'Entenda as diferenças entre integração e automação de sistemas, quando usar cada um e as melhores ferramentas do mercado.',
-    data: '2023-07-10',
+    data: '2025-03-01',
     arquivo: 'integracao-vs-automacao-sistemas.md',
     imagem: 'img/Galáxias da Integração e Automação.png',
     autor: 'Gu Caciolato',
