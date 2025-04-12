@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --primary: #0000ff;
+  --primary-darker: #0000cc;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 0, 0, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 30, 64, 175;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right, #AECDF2 0%, #95BFEE 25%, #7CB0EA 50%, #65A1E6 75%, #448EE2 100%);
+}
+
+/* Removendo qualquer estilo relacionado às bolinhas */
+canvas#backgroundDots {
+  display: none;
+}
+
+#__next,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos para seções */
+section {
+  @apply bg-transparent;
+}
+
+/* Estilos para cards */
+.card {
+  @apply bg-white/80 backdrop-blur-sm;
+}
+
+/* Estilos para o componente prose */
+.prose h1 {
+  @apply text-3xl font-bold mb-4 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-gray-900;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-6 mb-3 text-gray-900;
+}
+
+.prose p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4 text-gray-700;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose a {
+  @apply text-blue-500 hover:text-blue-600 underline;
+}
+
+.prose .lead {
+  @apply text-lg font-medium;
+}
+
+/* Dark mode overrides for prose */
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3 {
+  @apply text-white;
+}
+
+.dark .prose p,
+.dark .prose ul,
+.dark .prose li {
+  @apply text-gray-300;
+}
+
+/* Focus styles for form elements */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary, #3b82f6);
+  outline-offset: 2px;
+  border-color: var(--primary, #3b82f6) !important;
+  box-shadow: 0 0 0 2px rgba(var(--primary, #3b82f6), 0.25);
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  color: #333333;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder,
+.dark select::placeholder {
+  color: #666666;
+}
+
+/* Dark mode header and footer */
+.dark header,
+.dark footer {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Make text white in dark mode */
+.dark header a,
+.dark footer a,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark p,
+.dark span,
+.dark button,
+.dark li {
+  color: #ffffff !important;
+}
+
+/* Fix for navigation links */
+.dark header a:not(.text-blue-500),
+.dark nav a:not(.text-blue-500) {
+  color: #ffffff !important;
+}
+
+/* Make "blog" part of logo white in dark mode */
+.dark text[fill="#333333"] {
+  fill: #ffffff;
+}
+
+/* Fix for buttons in dark mode */
+.dark .bg-blue-500,
+.dark .hover\:bg-blue-500:hover,
+.dark .bg-blue-600,
+.dark .hover\:bg-blue-600:hover {
+  color: #000000 !important;
+}
